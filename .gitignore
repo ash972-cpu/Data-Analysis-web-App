@@ -1,0 +1,76 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Environment Variables
+.env
+.env.*
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Python Packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Streamlit (optional)
+.streamlit/secrets.toml
+
+# Generated Reports
+reports/
+output/
+outputs/
+exports/
+figures/
+
+# Plots & Images
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+
+# Excel/CSV Outputs (keep if generated)
+generated_data/
+processed_data/
+
+# Large datasets (ignore if not meant for GitHub)
+data/raw/
+data/external/
+
+# Cache
+.cache/
+
+# Temporary files
+*.tmp
+*.bak
