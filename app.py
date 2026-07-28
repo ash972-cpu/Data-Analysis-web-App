@@ -4,7 +4,7 @@ from helpers import *
 
 summer,winter = data_preprocessor()
 
-summer,winter = duplicate_row_remover(summer,winter)
+summer,winter = duplicate_rows_remover(summer,winter)
 
 summer.dropna(subset=["region"] , inplace=True)
 winter.dropna(subset=["region"] , inplace=True)
@@ -37,7 +37,6 @@ elif season=="Summer" and options=="Country-Wise":
     table = pd.DataFrame.from_dict(details , orient="index" , columns=["Value"])
     st.dataframe(table)
 
-
 elif season=="Winter" and options=="Country-Wise":
     st.subheader("Winter Country-Wise Search")
     medal_pivot_winter = medal_tally_calculator(winter)
@@ -46,14 +45,17 @@ elif season=="Winter" and options=="Country-Wise":
     table = pd.DataFrame.from_dict(details , orient="index" , columns=["Value"])
     st.dataframe(table)
 
+
 ### YEAR-WISE
-elif season =="Summer" and options=="Year-Wise":
-    st.subheader("Summer year-Wise Search")
+elif season=="Summer" and options=="Year-Wise":
+    st.subheader("Summer Year-Wise Search")
+
     years = sorted(summer["Year"].unique())
-    selected_year = st.selectbox("Select Year", years)
+    selected_year = st.selectbox("Select Year" , years)
 
     countries = sorted(summer[summer["Year"]==selected_year]["region"].unique())
     selected_country = st.selectbox("Select Country :" , countries)
+
     plot_medals(selected_year,selected_country,summer)
 
 elif season=="Winter" and options=="Year-Wise":
@@ -73,15 +75,16 @@ elif season=="Summer" and options=="Year-Wise Progress":
     st.subheader("OVERALL ANALYSIS OF A COUNTRY")
 
     countries = sorted(summer["region"].unique())
-    selected_country = st.selectbox("Choose country :",countries)
+    selected_country = st.selectbox("Choose country : ",countries)
 
     year_analysis(selected_country,summer)
 
 else:
+
     st.subheader("OVERALL ANALYSIS OF A COUNTRY")
 
-    countries = sorted(summer["region"].unique())
-    selected_country = st.selectbox("Choose country :",countries)
+    countries = sorted(winter["region"].unique())
+    selected_country = st.selectbox("Choose country : ",countries)
 
     year_analysis(selected_country,winter)
 

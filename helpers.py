@@ -14,7 +14,7 @@ def data_preprocessor():
     winter = df[df["Season"] == "Winter"]
     return summer,winter
 
-def duplicate_row_remover(df1,df2):
+def duplicate_rows_remover(df1,df2):
     df1 = df1.drop_duplicates(subset=["Team","NOC","Games","Year","City","Sport","Event"])
     df2 = df2.drop_duplicates(subset=["Team","NOC","Games","Year","City","Sport","Event"])
     return df1,df2
@@ -61,12 +61,12 @@ def plot_medals(year , country , df):
     ax.bar(medals,counts,color=["gold","silver","brown","green"])
 
     st.pyplot(fig)
-
+    
 def year_analysis(country,df):
     medals_count = df.groupby(["Year","region","Medal"]).size().unstack(fill_value=0)
     medals_count = medals_count.reset_index()
     medals_count["Total_Medal"] = medals_count["Gold"] + medals_count["Silver"] + medals_count["Bronze"]
-    
+
     filtered_df = medals_count[medals_count["region"] == country]
     fig,ax = plt.subplots()
     ax.plot(filtered_df["Year"] , filtered_df["Gold"] , color="gold" , label="GOLD" , marker="o" , linestyle="-")
@@ -74,4 +74,4 @@ def year_analysis(country,df):
     ax.plot(filtered_df["Year"] , filtered_df["Bronze"] , color="brown" , label="BRONZE", marker="o" , linestyle="-")
     ax.plot(filtered_df["Year"] , filtered_df["Total_Medal"] , color="green" , label="TOTAL MEDALS", marker="o" , linestyle="-")
     ax.legend()
-    plt.pyplot(fig)
+    st.pyplot(fig)
