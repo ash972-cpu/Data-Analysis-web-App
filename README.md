@@ -74,23 +74,27 @@ The project uses the **120 Years of Olympic History Dataset**, containing:
 
 ### Home Dashboard
 
-> *(Add a screenshot here)*
-
 ```
 screenshots/home.png
 ```
 
-### Medal Tally
-
-> *(Add screenshot)*
-
-### Athlete Analysis
-
-> *(Add screenshot)*
-
 ### Country Analysis
 
-> *(Add screenshot)*
+```
+screenshots/country.png
+```
+
+### Year Wise
+
+```
+screenshots/yearwise.png
+```
+
+###  Year Wise Progress
+
+```
+screenshots/yearwise_progress.png
+```
 
 ---
 
