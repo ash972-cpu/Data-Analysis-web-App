@@ -74,27 +74,22 @@ The project uses the **120 Years of Olympic History Dataset**, containing:
 
 ### Home Dashboard
 
-```
-screenshots/home.png
-```
+![Home Dashboard](screenshots/home.png)
 
 ### Country Analysis
 
-```
-screenshots/country.png
-```
+![Country Analysis](screenshots/country.png)
+
 
 ### Year Wise
 
-```
-screenshots/yearwise.png
-```
+![Year Wise](screenshots/yearwise.png)
+
 
 ###  Year Wise Progress
 
-```
-screenshots/yearwise_progress.png
-```
+![Year Wise Progress](screenshots/yearwise_progress.png)
+
 
 ---
 
@@ -125,6 +120,8 @@ streamlit run app.py
 ```
 
 ---
+## Streamlit Application Link
+https://ash972-cpu-data-analysis-web-app-app-ncwvqq.streamlit.app/
 
 ## 📈 Insights Generated
 
